@@ -15,13 +15,13 @@ OBJ_PATH = ./obj/
 #           SRCS                                                               #
 # **************************************************************************** #
 
-SRC_NAME = Colleen.asm
+SRC_NAME = Colleen.s
 
 # **************************************************************************** #
 #           VAR                                                                #
 # **************************************************************************** #
 
-OBJ_NAME= $(SRC_NAME:.asm=.o)
+OBJ_NAME= $(SRC_NAME:.s=.o)
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
@@ -60,7 +60,7 @@ $(SULLY): $(OBJ_PATH) $(OBJ)
 $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH) 2> /dev/null
 
-$(OBJ_PATH)%.o: $(SRC_PATH)%.asm
+$(OBJ_PATH)%.o: $(SRC_PATH)%.s
 	@$(MAKE_OBJ) $< -o $@
 	@printf "\033[33m$@\033[0m\n"
 
