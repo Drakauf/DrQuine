@@ -15,7 +15,7 @@ OBJ_PATH = ./obj/
 #           SRCS                                                               #
 # **************************************************************************** #
 
-SRC_NAME = Colleen.s
+SRC_NAME = Colleen.s Grace.s
 
 # **************************************************************************** #
 #           VAR                                                                #
@@ -43,14 +43,14 @@ endif
 #           REGLES                                                             #
 # **************************************************************************** #
 
-all : $(COLLEEN)
+all : $(COLLEEN) $(GRACE)
 
 $(COLLEEN): $(OBJ_PATH) $(OBJ)
 	@$(MAKE_EXEC) $@ ./obj/Colleen.o
 	@printf "\033[32mColleen: [OK]\033[0m\n"
 
 $(GRACE): $(OBJ_PATH) $(OBJ)
-	@gcc $(FLAGS) -o $@ obj/$(GRACE).o
+	@$(MAKE_EXEC) $@ ./obj/Grace.o
 	@printf "\033[32mGrace: [OK]\033[0m\n"
 
 $(SULLY): $(OBJ_PATH) $(OBJ)
