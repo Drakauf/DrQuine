@@ -61,7 +61,7 @@ $(OBJ_PATH):
 	@mkdir -p $(OBJ_PATH) 2> /dev/null
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
-	@gcc $(FLAGS) -o $@ -c $<
+	@gcc $(FLAGS) -D FIRSTQUINE=1 -o $@ -c $<
 	@printf "\033[33m$@\033[0m\n"
 
 clean:
