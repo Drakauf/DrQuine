@@ -32,7 +32,7 @@ PRT = $(addprefix $(PRINT_PATH), $(PRT_NAME))
 # **************************************************************************** #
 
 ifndef MAKE_OBJ
-	MAKE_OBJ = /usr/local/bin/nasm -f macho64 
+	MAKE_OBJ = nasm -f macho64 
 endif
 
 ifndef MAKE_EXEC
